@@ -15,7 +15,7 @@ CMD python -m pytest --cov-branch --cov libstore --cov-report "html:${PATH_TO_CO
 
 FROM bookstore-app-base as bookstore-app-test-mypy
 
-RUN pip install --no-cache-dir -r requirements/dev.txt
+RUN pip install --no-chache-dir -r requirements/dev.txt
 
 ENV PATH_TO_MYPY_RESULTS="/app/mypy"
 
