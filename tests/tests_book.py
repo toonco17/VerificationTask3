@@ -65,11 +65,6 @@ def test_checkParamTypes_author_None():
     return_code = book.checkParamTypes()
     assert return_code[1] == 0 # We desided to consider Undefined author and None author to be both correct. The only params that cannot be None are book_id and title
 
-def test_checkParamTypes_author_empty():
-    book = Book(author = "")
-    return_code = book.checkParamTypes()
-    assert return_code[1] == 1
-
 def test_checkParamTypes_author_multiple():
     book = Book(author = ["Elma Trou", "Rau Ravellie"])
     return_code = book.checkParamTypes()
@@ -101,6 +96,11 @@ def test_checkParamTypes_title_None():
     book = Book(title = None)
     return_code = book.checkParamTypes()
     assert return_code[2] == 1 # We can be unaware of the book's author, but never about its title
+
+def test_checkParamTypes_title_empty():
+    book = Book(title = "")
+    return_code = book.checkParamTypes()
+    assert return_code[2] == 1
 
 def test_checkParamTypes_title_wrongType():
     book = Book(title = 17.23)
