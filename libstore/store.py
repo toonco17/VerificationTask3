@@ -1,12 +1,12 @@
 class Book:
   def __init__(self,
                book_id = 0,
-               author = "Undefined",
+               author = None,
                title = "Undefined",
-               year = 0,
-               price = 0,
-               publisher = "AST",
-               genre = "Undefined"):
+               year = None,
+               price = None,
+               publisher = None,
+               genre = None):
 
     self.book_id = book_id
     self.author = author
