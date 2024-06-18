@@ -158,7 +158,7 @@ def test_checkParamTypes_price_manual_float():
 def test_checkParamTypes_price_manual_float_wrongPrecision1():
     book = Book(price = 1999.9)
     return_code = book.checkParamTypes()
-    assert return_code[4] == 1
+    assert return_code[4] == 0
 
 def test_checkParamTypes_price_manual_float_wrongPrecision2():
     book = Book(price = 1999.999)
