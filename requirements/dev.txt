@@ -1,5 +1,4 @@
 -r run.txt
-autopep8==2.1.0
 coverage==7.5.1
 mypy==1.10.0
 pytest==8.2.0
