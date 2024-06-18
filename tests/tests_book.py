@@ -15,7 +15,7 @@ import pytest
 #    publisher : string or None
 #    genre     : string, list of strings, or None
 
-from libstore.store import Book
+from libstore.book import Book
 
 # tests for book_id
 def test_checkParamTypes_book_id_default():
