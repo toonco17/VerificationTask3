@@ -1,4 +1,5 @@
-сoverage 7.5.1
+pip install --upgrade pip
+сoverage==7.5.1
 mypy==1.10.0
 pytest==6.2.5
 pytest-cov==5.0.0
