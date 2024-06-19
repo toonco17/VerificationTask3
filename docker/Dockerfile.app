@@ -6,8 +6,8 @@ COPY . /app/
 
 FROM bookstore-app-base as bookstore-app-test
 
-VENV PATH_TO_COVERAGE="/app/cov"
-VENV PATH_TO_PROFILE="/app/prof"
+ENV PATH_TO_COVERAGE="/app/cov"
+ENV PATH_TO_PROFILE="/app/prof"
 
 RUN pip install --no-cache-dir -r requirements/dev.txt
 
@@ -17,6 +17,6 @@ FROM bookstore-app-base as bookstore-app-test-mypy
 
 RUN pip install --no-cache-dir -r requirements/dev.txt
 
-VENV PATH_TO_MYPY_RESULTS="/app/mypy"
+ENV PATH_TO_MYPY_RESULTS="/app/mypy"
 
 CMD python -m mypy libstore --txt-report "${PATH_TO_MYPY_RESULTS}"
