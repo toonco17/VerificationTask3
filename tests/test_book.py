@@ -235,7 +235,7 @@ def test_checkParamTypes_genre_multiple():
     assert return_code[6] == 0
 
 def test_checkParamTypes_genre_multiple_wrongType():
-    book = Book(genre = ["dark fantazy", 17.23]
+    book = Book(genre = ["dark fantazy", 17.23])
     return_code = book.checkParamTypes()
     assert return_code[6] == 1
 
