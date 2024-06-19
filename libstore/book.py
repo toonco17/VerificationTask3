@@ -17,4 +17,5 @@ class Book:
     self.genre = genre
 
   def checkParamTypes(self):
-    pass
+    return_code = "000000"
+    return return_code
