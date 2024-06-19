@@ -1,4 +1,5 @@
 -r run.txt
+python==3.9
 coverage==7.5.1
 mypy==1.10.0
 pytest==6.2.5
