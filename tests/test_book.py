@@ -76,7 +76,7 @@ def test_checkParamTypes_author_multiple_wrongType():
     assert return_code[1] == 1
 
 def test_checkParamTypes_author_wrongType():
-    book = Book(author = 17.23):
+    book = Book(author = 17.23)
     return_code = book.checkParamTypes()
     assert return_code[1] == 1
 
