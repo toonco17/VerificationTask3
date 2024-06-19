@@ -71,7 +71,7 @@ def test_checkParamTypes_author_multiple():
     assert return_code[1] == 0
 
 def test_checkParamTypes_author_multiple_wrongType():
-    book = Book(author = ["Elma Trou", 17.23]
+    book = Book(author = ["Elma Trou", 17.23])
     return_code = book.checkParamTypes()
     assert return_code[1] == 1
 
