@@ -11,7 +11,8 @@ ENV PATH_TO_PROFILE="/app/prof"
 
 RUN pip install --no-cache-dir -r requirements/dev.txt
 
-CMD python -m pytest --cov-branch --cov == /VerificationTask3/libstore/ --cov-report "html:${PATH_TO_COVERAGE}" --profile --pstats-dir "${PATH_TO_PROFILE}"
+CMD pwd
+CMD python -m pytest --cov-branch --cov == ../VerificationTask3/libstore/ --cov-report "html:${PATH_TO_COVERAGE}" --profile --pstats-dir "${PATH_TO_PROFILE}"
 
 FROM bookstore-app-base as bookstore-app-test-mypy
 
