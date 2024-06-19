@@ -9,6 +9,7 @@ FROM bookstore-app-base as bookstore-app-test
 ENV PATH_TO_COVERAGE="/app/cov"
 ENV PATH_TO_PROFILE="/app/prof"
 
+RUN pip install --upgrade pip
 RUN pip install -r requirements/dev.txt
 
 CMD python -m pytest --cov-branch --cov libstore --cov-report "html:${PATH_TO_COVERAGE}" --profile --pstats-dir "${PATH_TO_PROFILE}"
