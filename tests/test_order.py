@@ -36,7 +36,7 @@ def test_Order_books_incorrect_book_id():
 def test_Order_books_incorrect_book_type():
     with pytest.raises(TypeError):
       sample_book = "shalala"
-      ordr = Order(books = {-1: sample_book})
+      ordr = Order(books = {1: sample_book})
 
 def test_Order_books_book_id_mismatch():
     with pytest.raises(ValueError):
