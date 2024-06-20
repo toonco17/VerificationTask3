@@ -260,9 +260,9 @@ def printBookInfo(book : Book, fullInfo = False):
 
 def test_showInfo_short():
     book = Book()
-    assert book.showInfo(False) == printBookInfo(False)
+    assert book.showInfo(False) == printBookInfo(book, False)
     
 def test_showInfo_full():
     book = Book()
-    assert book.showInfo(True) == printBookInfo(True)
+    assert book.showInfo(True) == printBookInfo(book, True)
 
