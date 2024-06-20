@@ -1,4 +1,4 @@
-FROM python:3.9-alpine as bookstore-app-base
+FROM python:3.11-alpine as bookstore-app-base
 
 WORKDIR /app
 
