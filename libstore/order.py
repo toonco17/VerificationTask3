@@ -30,12 +30,14 @@ class Order:
       if (book_id < 0):
         raise ValueError("in books dict: some book_id is < 0")
       if (type(self.books[book_id]) != Book):
-        raise ValueError("Some book in the order is fucked: book_id = ", book_id)
+        raise TypeError("Some book in the order is fucked: book_id = ", book_id)
 
     for book_id in self.books:
       if self.books[book_id].book_id != book_id:
         raise ValueError("book_ids' mismatch!")
 
+    if (self.order_status not in [0, 1, 2, 3]):
+      raise ValueError("Invalid order status")
 
   def checkOrderStatus(self):
     print(self.possible_order_statuses[self.order_status])
