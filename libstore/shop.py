@@ -1,7 +1,7 @@
-from book import Book
-from client import Client
-from id import Id
-from order import Order
+from libstore.book import Book
+from libstore.client import Client
+from libstore.id import Id
+from libstore.order import Order
 
 class Shop:
   def __init__(self,
