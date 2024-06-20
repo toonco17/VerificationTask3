@@ -24,7 +24,7 @@ class Order:
     if (self.client_id < 0):
       raise ValueError("client_id must be > 0")
 
-    for book_id in self.books():
+    for book_id in self.books:
       if (type(book_id) != int):
         raise ValueError("in books dict: some book_id is not int")
       if (book_id < 0):
