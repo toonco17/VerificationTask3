@@ -59,5 +59,5 @@ def test_Id_incr_emptyCode():
 
 def test_Id_incr_wrongTypeCode():
     ids = Id()
-    with pytest.raises(TypeError):
+    with pytest.raises(ValueError):
       ids.counterIncrease(1)
