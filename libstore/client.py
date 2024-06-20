@@ -1,6 +1,6 @@
 from libstore.book import Book
 from libstore.order import Order
-from libstore.shop import Shop
+#from libstore.shop import Shop
 from libstore.id import Id
 
 class Client:
@@ -24,11 +24,14 @@ class Client:
   def showBasket(self, fullInfo = False):
     pass
 
-  def showOrders(self):
-    pass
+#  def showOrders(self):
+#    pass
 
-  def checkoutAnOrder(self):
-    pass
+#  def checkoutAnOrder(self):
+#    pass
 
-  def declineOrderOrSendBack(self):
+#  def declineOrderOrSendBack(self):
+#    pass
+  
+  def changePassword(self):
     pass

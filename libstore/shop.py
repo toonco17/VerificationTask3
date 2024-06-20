@@ -23,9 +23,21 @@ class Shop:
 
   def removeBookFromLib(self):
     pass
-
-  def showAllOrders(self):
+    
+  def editLibBooks(self):
     pass
 
-  def deliverOrders(self):
+#  def showAllOrders(self):
+#    pass
+
+#  def deliverOrders(self):
+#    pass
+    
+#  def declineOrders(self):
+#    pass
+    
+  def changeShopName(self):
+    pass
+  
+  def changeShopPassword(self):
     pass
