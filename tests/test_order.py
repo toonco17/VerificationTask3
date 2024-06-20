@@ -73,7 +73,7 @@ def test_showBooksInThisOrder_empty():
     assert ordr.showBooksInThisOrder() == print("The order is empty")
 
 ### helper func###
-def showInfo(book1 : Book, book2 : book, fullInfo == False):
+def showInfo(book1 : Book, book2 : book, fullInfo = False):
     book1.showInfo(fullInfo = fullInfo)
     book2.showInfo(fullInfo = fullInfo)
 
