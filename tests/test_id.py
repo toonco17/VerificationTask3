@@ -49,7 +49,7 @@ def test_Id_init_order_id_incorrect():
       ids = Id(book_id = -1)
 
 # tests for correctly printed increments
-def test_Id_incr_client_id(:
+def test_Id_incr_client_id():
     ids = Id(client_id = 0))
     ids.counterIncrease("c")   
     assert ids.client_id == 1
