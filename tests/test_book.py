@@ -17,8 +17,6 @@ import pytest
 
 from libstore.book import Book
 
-# Напиши тесты на длину реткода!!!
-
 # tests for book_id
 def test_checkParamTypes_book_id_default():
     book = Book()
