@@ -16,6 +16,7 @@ class Book:
     self.publisher = publisher
     self.genre = genre
 
+
   def checkParamTypes(self):
     return_code = [-1, -1, -1, -1, -1, -1, -1]
 
@@ -44,7 +45,7 @@ class Book:
     if (type(self.title) == str and self.title != ""):
       return_code[2] = 0
     else:
-      return_code[2] += 1
+      return_code[2] = 1
 
     # check year
     if (type(self.year) == int or self.year == None):
@@ -55,13 +56,15 @@ class Book:
     # check price
     if ((type(self.price) == int and self.price >= 0) or self.price == None):
       return_code[4] = 0
-    elif (type(self.price == float) and self.price >= 0.00):
+    elif (type(self.price) == float and self.price >= 0.00):
       str_price_reversed = (str(self.price))[::-1]
       if (str_price_reversed[2] != "."):
         if (str_price_reversed[1] == "."):
           return_code[4] = 0
         else:
           return_code[4] = 1
+      else:
+        return_code[4] = 0
     else:
       return_code[4] = 1
 
@@ -71,7 +74,7 @@ class Book:
     else:
       return_code[5] = 0
 
-    #check genre
+    # check genre
     if (type(self.genre) == str or type(self.genre) == list or self.genre == None):
       if (type(self.genre) == list):
         flag = 0
