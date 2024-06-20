@@ -1,4 +1,4 @@
-from lidstore.book import Book
+from libstore.book import Book
 
 class Order:
   def __init__(self,
