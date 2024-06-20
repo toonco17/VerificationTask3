@@ -15,8 +15,8 @@ class Order:
   def checkOrderStatus(self):
     pass
 
-  def changeOrderStatus(self):
+  def changeOrderStatus(self, newStatus : int):
     pass
 
-  def showBooksInThisOrder(self):
+  def showBooksInThisOrder(self, fullInfo : bool):
     pass

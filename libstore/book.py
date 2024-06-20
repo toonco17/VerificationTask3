@@ -91,3 +91,6 @@ class Book:
       return_code[6] = 1
 
     return return_code
+    
+  def showInfo(self, fullInfo = False):
+    pass
