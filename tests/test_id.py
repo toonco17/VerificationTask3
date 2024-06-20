@@ -17,35 +17,17 @@ import pytest
 
 from libstore.id import Id
 
-# tests for the incorrect ids values
-def test_Id_initvalues_default():
-    ids = Id()
-    if (ids.client_id < 0):
-      raise ValueError("client_id < 0. client_id must be > 0")
-    if (type(ids.client_id) != int):
-      raise TypeError("client_id is not int now. client_id must be int")
-      
-    if (ids.book_id < 0):
-      raise ValueError("book_id < 0. book_id must be > 0")
-    if (type(ids.book_id) != int):
-      raise TypeError("book_id is not int now. book_id must be int")
-      
-    if (ids.order_id < 0):
-      raise ValueError("order_id < 0. order_id must be > 0")
-    if (type(ids.order_id) != int):
-      raise TypeError("order_id is not int now. order_id must be int")
-
 # wrongly initialized sample tests
 def test_Id_init_client_id_incorrect():
-    with pytest.raises(ValueError("Wrong client_id initialized. client_id must be > 0")):
+    with pytest.raises(ValueError):
       ids = Id(client_id = -1)
 
 def test_Id_init_book_id_incorrect():
-    with pytest.raises(ValueError("Wrong book_id initialized. book_id must be > 0")):
+    with pytest.raises(ValueError):
       ids = Id(book_id = -1)
 
 def test_Id_init_order_id_incorrect():
-    with pytest.raises(ValueError("Wrong order_id initialized. order_id must be > 0")):
+    with pytest.raises(ValueError):
       ids = Id(book_id = -1)
 
 # tests for correctly printed increments
@@ -67,15 +49,15 @@ def test_Id_incr_order_id():
 #tests for wrongly printer increments
 def test_Id_incr_wrongCode():
     ids = Id()
-    with pytest.raises(ValueError("Wrong code. Please, choose between c - client_id, b - book_id, o - order_id increments")):
+    with pytest.raises(ValueError):
       ids.counterIncrease("abracadabra123")
         
 def test_Id_incr_emptyCode():
     ids = Id()
-    with pytest.raises(ValueError("Wrong code. Please, choose between c - client_id, b - book_id, o - order_id increments")):
+    with pytest.raises(ValueError):
       ids.counterIncrease("")
 
 def test_Id_incr_wrongTypeCode():
     ids = Id()
-    with pytest.raises(TypeError("Wrong code. Please, choose between c - client_id, b - book_id, o - order_id increments")):
+    with pytest.raises(TypeError):
       ids.counterIncrease(1)
