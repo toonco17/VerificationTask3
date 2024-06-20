@@ -93,4 +93,15 @@ class Book:
     return return_code
     
   def showInfo(self, fullInfo = False):
-    pass
+    
+    print("book_id = ", book.book_id)
+    print("author = ",  book.author)
+    print("title = ", book.title)
+
+    if (fullInfo == True):
+      print("year = ", book.year)
+      print("price = ", book.price)
+      print("publisher = ", book.publisher)
+      print("genre = ", book.genre)
+
+      print("\n")
