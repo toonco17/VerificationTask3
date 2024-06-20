@@ -16,7 +16,6 @@ import pytest
 
 # Possible order statuses: {0 : "Awaiting confirmation", 1 : "Delivering", 2 : "Delivered", 3 : "Declined"}
 
-
 from libstore.order import Order
 from libstore.book import Book
 
@@ -51,7 +50,7 @@ def test_Order_order_status_wrongValue():
 # check functions
 def test_checkOrderStatus():
     ordr = Order(order_status = 0)
-    assert ordr.checkOrderStatus() == print("Awaiting confirmation") 
+    assert ordr.checkOrderStatus() == print("Awaiting confirmation")
     
 def test_changeOrderStatus():
     ordr = Order(order_status = 0)
