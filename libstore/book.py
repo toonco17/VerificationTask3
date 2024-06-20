@@ -94,14 +94,14 @@ class Book:
     
   def showInfo(self, fullInfo = False):
     
-    print("book_id = ", book.book_id)
-    print("author = ",  book.author)
-    print("title = ", book.title)
+    print("book_id = ", self.book_id)
+    print("author = ",  self.author)
+    print("title = ", self.title)
 
     if (fullInfo == True):
-      print("year = ", book.year)
-      print("price = ", book.price)
-      print("publisher = ", book.publisher)
-      print("genre = ", book.genre)
+      print("year = ", self.year)
+      print("price = ", self.price)
+      print("publisher = ", self.publisher)
+      print("genre = ", self.genre)
 
       print("\n")
