@@ -8,5 +8,5 @@ class Id:
     self.book_id = book_id
     self.order_id = order_id
 
-  def counterIncrease(self):
+  def counterIncrease(self, counter : str):
     pass
