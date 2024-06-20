@@ -1,0 +1,31 @@
+from book import Book
+from client import Client
+from id import Id
+from order import Order
+
+class Shop:
+  def __init__(self,
+               shop_name = "My Shop",
+               shop_password = "0000",
+               library = dict(),
+               orders =  dict()):
+
+    self.shop_name = shop_name
+    self.shop_password = shop_password
+    self.library = library
+    self.orders = orders
+
+  def addNewBooksToLib(self):
+    pass
+
+  def showAllBooksInLib(self):
+    pass
+
+  def removeBookFromLib(self):
+    pass
+
+  def showAllOrders(self):
+    pass
+
+  def deliverOrders(self):
+    pass
