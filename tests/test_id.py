@@ -50,7 +50,7 @@ def test_Id_init_order_id_incorrect():
 
 # tests for correctly printed increments
 def test_Id_incr_client_id():
-    ids = Id(client_id = 0))
+    ids = Id(client_id = 0)
     ids.counterIncrease("c")   
     assert ids.client_id == 1
 
