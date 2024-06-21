@@ -15,7 +15,7 @@ from libstore.book import Book
 # Tests for checkout function
 def test_checkoutAnOrder_shopAccept_book():
   book = Book(title = "Warriors")
-  client = Client(basket = {book[book_id] : book})
+  client = Client(basket = {book.book_id : book})
   all_orders = {}
   ord_id = ids.order_id
   
@@ -26,7 +26,7 @@ def test_checkoutAnOrder_shopAccept_book():
 
 def test_checkoutAnOrder_shopAccept_client_id_check():
   book = Book(title = "Warriors")
-  client = Client(basket = {book[book_id] : book})
+  client = Client(basket = {book.book_id : book})
   all_orders = {}
   ord_id = ids.order_id
   
@@ -36,7 +36,7 @@ def test_checkoutAnOrder_shopAccept_client_id_check():
 
 def test_checkOutAnOrder_order_id_in_ids_increases():
   book = Book(title = "Warriors")
-  client = Client(basket = {book[book_id] : book}) 
+  client = Client(basket = {book.book_id : book}) 
   all_orders = {}
   ord_id = ids.order_id
   
@@ -55,7 +55,7 @@ def test_checkoutAnOrder_basic_emptyOrder():
 
 def test_checkoutAnOrder_order_in_orders():
   book = Book(title = "Warriors")
-  client = Client(basket = {book[book_id] : book}) 
+  client = Client(basket = {book.book_id : book}) 
   all_orders = {}
   ord_id = ids.order_id
   
@@ -67,7 +67,8 @@ def test_checkoutAnOrder_order_in_orders():
 def test_cancelOrder_orderDeleteFromShop():
   book = Book(title = "Warriors")
   client = Client(client_id = 5)
+  all_orders = {}
   ordr = Order(order_status = 0, client_id = client.client_id)
-  orders[ordr.order_id : ordr]
+  all_orders[ordr.order_id] = ordr
   client.cancelOrder(ordr.order_id)
   assert len(shop.orders) == 0
