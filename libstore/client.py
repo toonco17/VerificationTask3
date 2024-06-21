@@ -1,6 +1,6 @@
 from libstore.book import Book
 from libstore.order import Order
-#from libstore.shop import Shop
+from libstore.shop import Shop
 from libstore.id import Id
 
 
