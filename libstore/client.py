@@ -28,10 +28,17 @@ class Client:
       raise KeyError("There is no such book in the basket.")
 
   def checkoutAnOrder(self, all_orders : dict, ids : Id):
-    pass
+    ordr = Order(order_id = ids.order_id, client_id = self.client_id)
+    ids.counterIncrease("o")
+    ordr.books = self.basket.copy()
+    all_orders[ordr.order_id] = ordr
+    return all_orders, ids
 
-  def cancelOrder(self, order_id, all_orders):
-    pass
+  def cancelOrder(self, order_id, all_orders : dict):
+     if order_id in all_orders:
+       del all_orders[order_id]
+     else:
+       raise KeyError("Such order does not exist!")
 
 # Выяснилось, что циркулярную инициализацию делать нельзя (что нормальным людям очевидно, но я ж особенный),
 # поэтому придется вынести взаимодействие клиента и магазина во внешний словарь all_orders.
