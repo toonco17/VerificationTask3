@@ -21,8 +21,8 @@ class Shop:
     else:
       raise KeyError("No such book in the library")
 
-#  def deliverOrders(self):
-#    pass
+  def deliverOrders(self):
+    pass
     
-#  def declineOrders(self):
-#    pass
+  def declineOrders(self):
+    pass
