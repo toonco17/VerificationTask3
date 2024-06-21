@@ -30,13 +30,13 @@ def test_Client_client_password_incorrect():
 def test_addBooksToBasket():
     book = Book(book_id = 1, title = "Warriors")
     client = Client()
-    client.addBooksToBasket(book.book_id)
-    assert client.basket[book_id].title == "Warriors"
+    client.addBooksToBasket(book)
+    assert client.basket[book.book_id].title == "Warriors"
 
 def test_removeBooksFromBasket():
     book = Book(book_id = 1, title = "Warriors")
     client = Client(basket = {book.book_id : book})
-    client.removeBooksFromBasket(book)
+    client.removeBooksFromBasket(book.book_id)
     with pytest.raises(KeyError):
         print(client[book.book_id])
 

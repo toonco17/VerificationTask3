@@ -16,18 +16,20 @@ class Client:
     self.basket = basket
     self.orders = orders
 
-  if (type(self.client_id) != int or self.client_id < 0):
-    raise ValueError("client_id must be non-negative int")
+#  if (type(self.client_id) != int or self.client_id < 0):
+#    raise ValueError("client_id must be non-negative int")
 
-  if (type(client_password) != str):
-    raise typeError("Client pass must be a string")
+#  if (type(self.client_password) != str):
+#    raise typeError("Client pass must be a string")
 
-  def addBooksToBasket(self, book_id):
-    self.basket[book.book_id] = book
+  def addBooksToBasket(self, book):
+    pass
+#    self.basket[book.book_id] = book
 
   def removeBooksFromBasket(self, book_id):
-    if book_id in self.basket:
-      del self.basket[book_id]
+    pass
+#    if book_id in self.basket:
+#      del self.basket[book_id]
 
 #  def checkoutAnOrder(self):
 #    pass
