@@ -21,7 +21,7 @@ def test_checkoutAnOrder_shopAccept_book():
   
   # This means we have 1 book, 1 client and 0 orders
   ids = Id(book_id = 1, client_id = 1, order_id = 0)
-  client.checkOutAnOrder(all_orders = all_orders, ids = ids)
+  all_orders, ids = client.checkOutAnOrder(all_orders = all_orders, ids = ids)
   assert all_orders[ord_id].books[book.book_id].title == "Warriors"
 
 def test_checkoutAnOrder_shopAccept_client_id_check():
@@ -31,7 +31,7 @@ def test_checkoutAnOrder_shopAccept_client_id_check():
   ord_id = ids.order_id
   
   ids = Id(book_id = 1, client_id = 1, order_id = 0)
-  client.checkOutAnOrder(all_orders = all_orders, ids = ids)
+  all_orders, ids = client.checkOutAnOrder(all_orders = all_orders, ids = ids)
   assert all_orders[ord_id].client_id == client.client_id
 
 def test_checkOutAnOrder_order_id_in_ids_increases():
@@ -41,7 +41,7 @@ def test_checkOutAnOrder_order_id_in_ids_increases():
   ord_id = ids.order_id
   
   ids = Id(book_id = 1, client_id = 1, order_id = 0)
-  client.checkOutAnOrder(all_orders = all_orders, ids = ids)
+  all_orders, ids = client.checkOutAnOrder(all_orders = all_orders, ids = ids)
   assert ids.order_id == 1
 
 def test_checkoutAnOrder_basic_emptyOrder():
@@ -51,7 +51,7 @@ def test_checkoutAnOrder_basic_emptyOrder():
   ids = Id(book_id = 1, client_id = 1, order_id = 0)
   
   with pytest.raises(KeyError):
-    client.checkOutAnOrder(all_orders = all_orders, ids = ids)
+    all_orders, ids = client.checkOutAnOrder(all_orders = all_orders, ids = ids)
 
 def test_checkoutAnOrder_order_in_orders():
   book = Book(title = "Warriors")
@@ -60,7 +60,7 @@ def test_checkoutAnOrder_order_in_orders():
   ord_id = ids.order_id
   
   ids = Id(book_id = 1, client_id = 1, order_id = 0)
-  client.checkOutAnOrder(all_orders = all_orders, ids = ids)
+  all_orders, ids = client.checkOutAnOrder(all_orders = all_orders, ids = ids)
   assert len(all_orders) == 1
 
 # Tests for cancelling function
