@@ -31,8 +31,8 @@ class Client:
     else:
       raise KeyError("There is no such book in the basket.")
 
-#  def checkoutAnOrder(self):
-#    pass
+  def checkoutAnOrder(self, shop : Shop):
+    pass
 
-#  def declineOrderOrSendBack(self):
-#    pass
+  def cancelOrder(self, order_id):
+    pass
