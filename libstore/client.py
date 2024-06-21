@@ -1,20 +1,16 @@
 from libstore.book import Book
 from libstore.order import Order
-from libstore.shop import Shop
 from libstore.id import Id
-
 
 class Client:
   def __init__(self,
                client_id = 0,
                client_password = "0000",
-               basket = dict(),
-               orders = dict()):
+               basket = dict()):
 
     self.client_id = client_id
     self.client_password = client_password
     self.basket = basket
-    self.orders = orders
 
     if (type(self.client_id) != int or self.client_id < 0):
       raise ValueError("client_id must be non-negative int")
@@ -31,8 +27,11 @@ class Client:
     else:
       raise KeyError("There is no such book in the basket.")
 
-  def checkoutAnOrder(self, shop : Shop, ids : Id):
+  def checkoutAnOrder(self, all_orders : dict):
     pass
 
-  def cancelOrder(self, order_id):
+  def cancelOrder(self, order_id, all_orders):
     pass
+
+# Выяснилось, что циркулярную инициализацию делать нельзя (что нормальным людям очевидно, но я ж особенный),
+# поэтому придется вынести взаимодействие клиента и магазина во внешний словарь all_orders.
