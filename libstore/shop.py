@@ -15,14 +15,14 @@ class Shop:
     self.library = library
     self.orders = orders
 
-  def addNewBooksToLib(self):
-    pass
-
-  def removeBookFromLib(self):
-    pass
-
-#  def showAllOrders(self):
-#    pass
+  def addNewBooksToLib(self, book : Book):
+    self.library[book.book_id] = book
+    
+  def removeBookFromLib(self, book_id):
+    if (book_id in self.library):
+      del self.library[book_id]
+    else:
+      raise KeyError("No such book in the library")
 
 #  def deliverOrders(self):
 #    pass
