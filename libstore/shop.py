@@ -33,7 +33,7 @@ class Shop:
     
   def declineOrders(self, order_id, all_orders):
     if order_id in all_orders:
-      all_orders[order_is].order_status = 3
+      all_orders[order_id].order_status = 3
       return all_orders
     else:
       raise KeyError("No such order in all_orders")
