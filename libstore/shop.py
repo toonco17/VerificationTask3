@@ -26,7 +26,7 @@ class Shop:
       for book_id in all_orders[order_id].books:
         if book_id not in self.library:
           raise KeyError("No such book in the library: book_id = ", book__id)
-      all_orders[order_is].order_status = 2
+      all_orders[order_id].order_status = 2
       return all_orders
     else:
       raise KeyError("No such order in all_orders")
