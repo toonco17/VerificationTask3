@@ -16,17 +16,12 @@ class Client:
     self.basket = basket
     self.orders = orders
 
-  def addBooksToBasket(self):
-    pass
+  def addBooksToBasket(self, book_id):
+    self.basket[book.book_id] = book
 
-  def removeBooksFromBasket(self):
-    pass
-
-  def showBasket(self, fullInfo = False):
-    pass
-
-#  def showOrders(self):
-#    pass
+  def removeBooksFromBasket(self, book_id):
+    if book_id in self.basket:
+      del self.basket[book_id]
 
 #  def checkoutAnOrder(self):
 #    pass
