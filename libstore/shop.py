@@ -22,7 +22,18 @@ class Shop:
       raise KeyError("No such book in the library")
 
   def deliverOrders(self, order_id, all_orders):
-    pass
+    if order_id in all_orders:
+      for book_id in all_orders[order_id].books:
+        if book_id not in self.library:
+          raise KeyError("No such book in the library: book_id = ", book__id)
+      all_orders[order_is].order_status = 2
+      return all_orders
+    else:
+      raise KeyError("No such order in all_orders")
     
   def declineOrders(self, order_id, all_orders):
-    pass
+    if order_id in all_orders:
+      all_orders[order_is].order_status = 3
+      return all_orders
+    else:
+      raise KeyError("No such order in all_orders")
