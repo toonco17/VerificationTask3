@@ -70,5 +70,5 @@ def test_cancelOrder_orderDeleteFromShop():
   all_orders = {}
   ordr = Order(order_status = 0, client_id = client.client_id)
   all_orders[ordr.order_id] = ordr
-  client.cancelOrder(ordr.order_id)
-  assert len(shop.orders) == 0
+  all_orders = client.cancelOrder(ordr.order_id, all_orders = all_orders)
+  assert len(all_orders) == 0
