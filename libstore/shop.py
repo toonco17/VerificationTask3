@@ -11,7 +11,6 @@ class Shop:
     self.shop_name = shop_name
     self.shop_password = shop_password
     self.library = library
-    self.orders = orders
 
   def addNewBooksToLib(self, book : Book):
     self.library[book.book_id] = book
