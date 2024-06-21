@@ -39,6 +39,7 @@ class Client:
   def cancelOrder(self, order_id, all_orders : dict):
      if order_id in all_orders:
        del all_orders[order_id]
+       return all_orders
      else:
        raise KeyError("Such order does not exist!")
 
