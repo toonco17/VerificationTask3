@@ -50,9 +50,9 @@ def test_checkOutAnOrder_order_id_in_ids_increases():
 def test_checkoutAnOrder_basic_emptyOrder():
   client = Client(basket = {})
   all_orders = {}
-
-  ord_id = ids.order_id
+  
   ids = Id(book_id = 1, client_id = 1, order_id = 0)
+  ord_id = ids.order_id
   
   with pytest.raises(KeyError):
     all_orders, ids = client.checkoutAnOrder(all_orders = all_orders, ids = ids)
