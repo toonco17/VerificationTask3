@@ -69,14 +69,14 @@ def test_checkoutAnOrder_order_in_orders():
   assert len(all_orders) == 1
 
 # Tests for cancelling function
-def test_cancelOrder_orderDeleteFromShop():
+def test_cancelOrder_orderDeleteFromOrders():
   book = Book(title = "Warriors")
   client = Client(client_id = 5)
   all_orders = {}
   ordr = Order(order_status = 0, client_id = client.client_id)
   all_orders[ordr.order_id] = ordr
   all_orders = client.cancelOrder(ordr.order_id, all_orders = all_orders)
-  assert type(all_orders) == None
+  assert type(all_orders) == NoneType
 
 def test_cancelOrder_keyError():
   client = Client()
