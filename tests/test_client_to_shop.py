@@ -76,7 +76,7 @@ def test_cancelOrder_orderDeleteFromOrders():
   ordr = Order(order_status = 0, client_id = client.client_id)
   all_orders[ordr.order_id] = ordr
   all_orders = client.cancelOrder(ordr.order_id, all_orders = all_orders)
-  assert type(all_orders) == NoneType
+  assert len(all_orders) == 0
 
 def test_cancelOrder_keyError():
   client = Client()
