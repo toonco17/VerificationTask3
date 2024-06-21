@@ -28,6 +28,8 @@ class Client:
       raise KeyError("There is no such book in the basket.")
 
   def checkoutAnOrder(self, all_orders : dict, ids : Id):
+    if (len(self.basket) == 0):
+      raise KeyError("The basket is empty. Start purchasing now!")
     ordr = Order(order_id = ids.order_id, client_id = self.client_id)
     ids.counterIncrease("o")
     ordr.books = self.basket.copy()
