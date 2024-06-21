@@ -38,7 +38,7 @@ def test_removeBooksFromBasket():
     client = Client(basket = {book.book_id : book})
     client.removeBooksFromBasket(book.book_id)
     with pytest.raises(KeyError):
-        print(client[book.book_id])
+        print(client.basket[book_id])
 
 # Я все еще не знаю, как написать тест на функцию, которая тупо печатает и ничего не возвращает
 # Поэтому я не буду ее писать, лол, вообще ее имплементировать не буду
