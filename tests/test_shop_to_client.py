@@ -36,6 +36,6 @@ def test_declineOrders():
   book = Book(book_id = 5)
   ordr = Order(books = {book.book_id : book})
   all_orders = {}
-  all_orders[ordr.order_id : ordr]
+  all_orders[ordr.order_id] = ordr
   all_orders = shop.declineOrders(ordr.order_id, all_orders)
   assert all_orders[ordr.order_id].order_status == 3
