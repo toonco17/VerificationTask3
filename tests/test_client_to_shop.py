@@ -72,3 +72,8 @@ def test_cancelOrder_orderDeleteFromShop():
   all_orders[ordr.order_id] = ordr
   all_orders = client.cancelOrder(ordr.order_id, all_orders = all_orders)
   assert len(all_orders) == 0
+
+def test_cancelOrder_keyError():
+  all_orders = {}
+  with pytest.raises(KeyError):
+    all_orders = client.cancelOrder(order_id = 5, all_orders = all_orders)
