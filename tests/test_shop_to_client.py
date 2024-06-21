@@ -35,7 +35,7 @@ def test_deliverOrders_noBookInLib():
 def test_declineOrders():
   book = Book(book_id = 5)
   ordr = Order(books = {book.book_id : book})
-  shop = Shop(library = {library = {book.book_id : book}})
+  shop = Shop(library = (library = {book.book_id : book}))
   all_orders = {}
   all_orders[ordr.order_id] = ordr
   all_orders = shop.declineOrders(ordr.order_id, all_orders)
