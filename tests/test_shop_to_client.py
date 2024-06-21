@@ -27,7 +27,7 @@ def test_deliverOrders_emptyOrder():
 def test_deliverOrders_noBookInLib():
   book = Book(book_id = 5)
   shop = Shop(library = {})
-  ordr = Order(books = {book.book_id : Book})
+  ordr = Order(books = {book.book_id : book})
   all_orders = {ordr.order_id : ordr}
   with pytest.raises(keyError):
     all_orders = shop.deliverOrders(order_id = book.book_id, all_orders = all_orders)
