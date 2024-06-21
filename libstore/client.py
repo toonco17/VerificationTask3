@@ -1,4 +1,4 @@
-from libstore.book import Book
+from libstore.book import
 from libstore.order import Order
 #from libstore.shop import Shop
 from libstore.id import Id
@@ -32,6 +32,3 @@ class Client:
 
 #  def declineOrderOrSendBack(self):
 #    pass
-  
-  def changePassword(self):
-    pass
