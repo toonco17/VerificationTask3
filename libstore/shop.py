@@ -18,13 +18,7 @@ class Shop:
   def addNewBooksToLib(self):
     pass
 
-  def showAllBooksInLib(self):
-    pass
-
   def removeBookFromLib(self):
-    pass
-    
-  def editLibBooks(self):
     pass
 
 #  def showAllOrders(self):
@@ -35,9 +29,3 @@ class Shop:
     
 #  def declineOrders(self):
 #    pass
-    
-  def changeShopName(self):
-    pass
-  
-  def changeShopPassword(self):
-    pass
