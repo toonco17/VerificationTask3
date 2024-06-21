@@ -79,6 +79,7 @@ def test_cancelOrder_orderDeleteFromShop():
   assert type(all_orders) == None
 
 def test_cancelOrder_keyError():
+  client = Client()
   all_orders = {}
   with pytest.raises(KeyError):
     all_orders = client.cancelOrder(order_id = 5, all_orders = all_orders)
