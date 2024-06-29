@@ -25,8 +25,6 @@ def test_Client_client_password_incorrect():
     with pytest.raises(TypeError):
         client = Client(client_password = 1234)
 
-### i'm too lazy to check basket and orders initialization, ma sorry
-
 def test_addBooksToBasket():
     book = Book(book_id = 1, title = "Warriors")
     client = Client()
@@ -40,6 +38,8 @@ def test_removeBooksFromBasket():
     with pytest.raises(KeyError):
         print(client.basket[book.book_id])
 
-# Я все еще не знаю, как написать тест на функцию, которая тупо печатает и ничего не возвращает
-# Поэтому я не буду ее писать, лол, вообще ее имплементировать не буду
-# Когда сломается - тогда и станет понятно, как надо было предсказывать это дерьмо
+#additional tests for better coverage
+def test_removeBooks():
+    cli = Client()
+    with pytest.raises(KeyError):
+      cli.removeBooksFromBasket(book_id = 1)
