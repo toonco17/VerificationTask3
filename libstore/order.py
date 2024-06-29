@@ -12,19 +12,25 @@ class Order:
 
     if (type(self.order_id) != int):
       raise ValueError("order_id must be int")
+    else: pass
     if (self.order_id < 0):
       raise ValueError("order_id must be > 0")
+    else: pass
 
     if (type(self.client_id) != int):
       raise ValueError("client_id must be int")
+    else: pass
     if (self.client_id < 0):
       raise ValueError("client_id must be > 0")
+    else: pass
 
     for book_id in self.books:
       if (type(book_id) != int):
         raise ValueError("in books dict: some book_id is not int")
+      else: pass
       if (book_id < 0):
         raise ValueError("in books dict: some book_id is < 0")
+      else: pass
       if (type(self.books[book_id]) != Book):
         raise TypeError("Some book in the order is fucked: book_id = ", book_id)
       else: continue
@@ -44,6 +50,7 @@ class Order:
   def changeOrderStatus(self, newStatus = 0):
     if (type(newStatus) == int and newStatus not in [0, 1, 2, 3]):
       raise ValueError("Wrong status code value: choose 0-3")
+    else: pass
     if (type(newStatus) != int):
       raise TypeError("Wrong status code type")
     else: pass
