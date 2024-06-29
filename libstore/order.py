@@ -27,6 +27,8 @@ class Order:
         raise ValueError("in books dict: some book_id is < 0")
       if (type(self.books[book_id]) != Book):
         raise TypeError("Some book in the order is fucked: book_id = ", book_id)
+      else:
+        continue
 
     for book_id in self.books:
       if self.books[book_id].book_id != book_id:
