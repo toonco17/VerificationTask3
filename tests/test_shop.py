@@ -28,3 +28,9 @@ def test_removeBooksFromLib():
   shop.removeBookFromLib(book.book_id)
   with pytest.raises(KeyError):
     print(shop.library[book.book_id].title)
+
+#added tests for better coverage
+def test_additional_removeBook():
+  shop = Shop(library = {})
+  with pytest.raises(KeyError):
+    shop.removeBookFromLib(book_id = 1)
