@@ -3,10 +3,7 @@ from libstore.order import Order
 from libstore.id import Id
 
 class Client:
-  def __init__(self,
-               client_id = 0,
-               client_password = "0000",
-               basket = dict()):
+  def __init__(self, client_id = 0,client_password = "0000", basket = dict()):
 
     self.client_id = client_id
     self.client_password = client_password
@@ -14,6 +11,7 @@ class Client:
 
     if (type(self.client_id) != int or self.client_id < 0):
       raise ValueError("client_id must be non-negative int")
+    else: pass
     if (type(self.client_password) != str):
       raise TypeError("Client pass must be a string")
     else: pass
@@ -29,6 +27,7 @@ class Client:
   def checkoutAnOrder(self, all_orders : dict, ids : Id):
     if (len(self.basket) == 0):
       raise KeyError("The basket is empty. Start purchasing now!")
+    else: pass
     ordr = Order(order_id = ids.order_id, client_id = self.client_id)
     ids.counterIncrease("o")
     ordr.books = self.basket.copy()
