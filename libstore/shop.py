@@ -3,10 +3,7 @@ from libstore.id import Id
 from libstore.order import Order
 
 class Shop:
-  def __init__(self,
-               shop_name = "My Shop",
-               shop_password = "0000",
-               library = dict()):
+  def __init__(self, shop_name = "My Shop", shop_password = "0000", library = dict()):
 
     self.shop_name = shop_name
     self.shop_password = shop_password
