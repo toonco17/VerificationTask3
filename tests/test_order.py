@@ -87,3 +87,17 @@ def test_showBooksInThisOrder_short():
     book2 = Book(book_id = 2)
     ordr = Order(books = {book1.book_id : book1, book2.book_id : book2})
     assert ordr.showBooksInThisOrder(True) == showInfo(book1, book2, True)
+
+#additional tests for better coverage
+def test_additional_nonint_order_id():
+    with pytest.raises(ValueError):
+      ordr = Order(order_id = "shalakaka")
+
+def test_additional_nonint_client_id():
+    with pytest.raises(ValueError):
+        ordr = Order(client_id = "titikaka")
+
+def test_additional_nonint_book_id():
+    book = Book()
+    with pytest.raises(ValueError):
+        ordr = Order(books = {"shalala" : book})
