@@ -50,3 +50,9 @@ def test_additional_deliverOrders():
   all_orders[ordr.order_id] = ordr
   with pytest.raises(KeyError):
     shop.deliverOrders(order_id = ordr.order_id, all_orders = all_orders)
+
+def test_additional_declineOrders():
+  shop = Shop()
+  all_orders = dict()
+  with pytest.raises(KeyError):
+    shop.declineOrders(order_id = 1, all_orders = all_orders)
