@@ -47,6 +47,6 @@ def test_additional_deliverOrders():
   book = Book()
   all_orders = dict()
   ordr = Order(books = {book.book_id : book})
-  all_orders.append(ordr)
+  all_orders[ordr.order_id] = ordr
   with pytest.raises(KeyError):
     shop.deliverOrders(order_id = ordr.order_id, all_orders = all_orders)
