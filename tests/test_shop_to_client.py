@@ -40,3 +40,13 @@ def test_declineOrders():
   all_orders[ordr.order_id] = ordr
   all_orders = shop.declineOrders(ordr.order_id, all_orders)
   assert all_orders[ordr.order_id].order_status == 3
+
+#additional tests for better coverage
+def test_additional_deliverOrders():
+  shop = Shop(library = {})
+  book = Book()
+  all_orders = dict()
+  ordr = Order(books = {book.book_id : book})
+  all_orders.append(ordr)
+  with pytest.raises(KeyError):
+    shop.deliverOrders(order_id = ordr.order_id, all_orders = all_orders)
