@@ -7,18 +7,24 @@ class Id:
 
     if (type(self.client_id) != int):
       raise ValueError("client_id is not int")
+    else: pass
     if (self.client_id < 0):
       raise ValueError("client_id is < 0")
+    else: pass
 
     if (type(self.book_id) != int):
       raise ValueError("book_id is not int")
+    else: pass
     if (self.book_id < 0):
       raise ValueError("book_id is < 0")
+    else: pass
   
     if (type(self.order_id) != int):
       raise ValueError("order_id is not int")
+    else: pass
     if (self.order_id < 0):
       raise ValueError("client_id is < 0")
+    else: pass
 
   def counterIncrease(self, counter):
     match counter:
