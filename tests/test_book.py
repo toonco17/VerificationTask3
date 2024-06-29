@@ -239,7 +239,6 @@ def test_checkParamTypes_genre_multiple_wrongType():
     return_code = book.checkParamTypes()
     assert return_code[6] == 1
 
-
 # I had to think about the additional function, showInfo(), showing the book parameters, because this func seems to be needed several times here and there,
 # including the tests for Order class lol =D
 # It's more about refactoring already, but still I'm to implement it within the batch of the basic functionality
@@ -266,3 +265,14 @@ def test_showInfo_full():
     book = Book()
     assert book.showInfo(True) == printBookInfo(book, True)
 
+#additional tests (for better coverage lol)
+#check author
+def test_book_additional_checkParamTypes_check_author_severalAuthors_flagZero():
+    book = Book(author = ["Elma Trou", "toonco17"])
+    return_code = book.checkParamTypes()
+    assert return_code[1] == 0
+
+def test_book_additional_checkParamTypes_check_author_flagNonzero():
+    book = Book(author = 17)
+    return_code = book.checkParamTypes()
+    assert return_code[1] == 1
