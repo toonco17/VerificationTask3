@@ -33,9 +33,12 @@ class Order:
     for book_id in self.books:
       if self.books[book_id].book_id != book_id:
         raise ValueError("book_ids' mismatch!")
-
+      else: continue
+    
     if (self.order_status not in [0, 1, 2, 3]):
       raise ValueError("Invalid order status")
+    else:
+      pass
 
   def checkOrderStatus(self):
     print(self.possible_order_statuses[self.order_status])
