@@ -27,8 +27,7 @@ class Order:
         raise ValueError("in books dict: some book_id is < 0")
       if (type(self.books[book_id]) != Book):
         raise TypeError("Some book in the order is fucked: book_id = ", book_id)
-      else:
-        continue
+      else: continue
 
     for book_id in self.books:
       if self.books[book_id].book_id != book_id:
@@ -37,8 +36,7 @@ class Order:
     
     if (self.order_status not in [0, 1, 2, 3]):
       raise ValueError("Invalid order status")
-    else:
-      pass
+    else: pass
 
   def checkOrderStatus(self):
     print(self.possible_order_statuses[self.order_status])
@@ -48,6 +46,7 @@ class Order:
       raise ValueError("Wrong status code value: choose 0-3")
     if (type(newStatus) != int):
       raise TypeError("Wrong status code type")
+    else: pass
     self.order_status = newStatus
 
   def showBooksInThisOrder(self, fullInfo = False):
