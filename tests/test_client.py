@@ -40,6 +40,6 @@ def test_removeBooksFromBasket():
 
 #additional tests for better coverage
 def test_removeBooks():
-    cli = Client()
+    cli = Client(basket = {})
     with pytest.raises(KeyError):
       cli.removeBooksFromBasket(book_id = 1)
