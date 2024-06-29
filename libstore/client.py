@@ -14,9 +14,9 @@ class Client:
 
     if (type(self.client_id) != int or self.client_id < 0):
       raise ValueError("client_id must be non-negative int")
-
     if (type(self.client_password) != str):
       raise TypeError("Client pass must be a string")
+    else: pass
 
   def addBooksToBasket(self, book):
     self.basket[book.book_id] = book
@@ -24,8 +24,7 @@ class Client:
   def removeBooksFromBasket(self, book_id):
     if book_id in self.basket:
       del self.basket[book_id]
-    else:
-      raise KeyError("There is no such book in the basket.")
+    else: raise KeyError("There is no such book in the basket.")
 
   def checkoutAnOrder(self, all_orders : dict, ids : Id):
     if (len(self.basket) == 0):
@@ -40,8 +39,7 @@ class Client:
      if order_id in all_orders:
        del all_orders[order_id]
        return all_orders
-     else:
-       raise KeyError("Such order does not exist!")
+     else: raise KeyError("Such order does not exist!")
 
 # Выяснилось, что циркулярную инициализацию делать нельзя (что нормальным людям очевидно, но я ж особенный),
 # поэтому придется вынести взаимодействие клиента и магазина во внешний словарь all_orders.
