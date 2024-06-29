@@ -35,9 +35,12 @@ class Book:
         if (type(auth) != str):
           return_code[1] = 1
           flag = 1
-          break
+        else:
+          continue
       if (flag == 0):
         return_code[1] = 0
+      else:
+        return_code[1] = 1
     else:
       return_code[1] = 1
 
