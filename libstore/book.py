@@ -85,7 +85,6 @@ class Book:
           if (type(gen) != str):
             return_code[6] = 1
             flag = 1
-            break
         if (flag == 0):
           return_code[6] = 0
       else:
