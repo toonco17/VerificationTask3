@@ -15,24 +15,20 @@ class Shop:
   def removeBookFromLib(self, book_id):
     if (book_id in self.library):
       del self.library[book_id]
-    else:
-      raise KeyError("No such book in the library")
+    else: raise KeyError("No such book in the library")
 
   def deliverOrders(self, order_id, all_orders):
     if order_id in all_orders:
       for book_id in all_orders[order_id].books:
         if book_id not in self.library:
           raise KeyError("No such book in the library: book_id = ", book_id)
-        else:
-          continue
+        else: continue
       all_orders[order_id].order_status = 2
       return all_orders
-    else:
-      raise KeyError("No such order in all_orders")
+    else: raise KeyError("No such order in all_orders")
     
   def declineOrders(self, order_id, all_orders):
     if order_id in all_orders:
       all_orders[order_id].order_status = 3
       return all_orders
-    else:
-      raise KeyError("No such order in all_orders")
+    else: raise KeyError("No such order in all_orders")
