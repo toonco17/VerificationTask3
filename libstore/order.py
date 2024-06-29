@@ -1,11 +1,7 @@
 from libstore.book import Book
 
 class Order:
-  def __init__(self,
-               order_id = 0,
-               client_id = 0,
-               books = dict(),
-               order_status = 0):
+  def __init__(self, order_id = 0, client_id = 0, books = dict(), order_status = 0):
 
     self.order_id = order_id
     self.client_id = client_id
