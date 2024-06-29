@@ -268,11 +268,11 @@ def test_showInfo_full():
 #additional tests (for better coverage lol)
 #check author
 def test_book_additional_checkParamTypes_check_author_severalAuthors_flagZero():
-    book = Book(author = ["Elma Trou", "toonco17"])
+    book = Book(author = list("Elma Trou", "toonco17"))
     return_code = book.checkParamTypes()
     assert return_code[1] == 0
 
 def test_book_additional_checkParamTypes_check_author_flagNonzero():
-    book = Book(author = 17)
+    book = Book(author = int(17))
     return_code = book.checkParamTypes()
     assert return_code[1] == 1
