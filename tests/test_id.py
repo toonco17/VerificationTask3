@@ -64,17 +64,17 @@ def test_Id_incr_wrongTypeCode():
 
 #additional tests for better coverage
 def test_additional_Id_client_id_wrongType():
-    with pytest.raise(ValueError):
+    with pytest.raises(ValueError):
         ids = Id(client_id = "Ooh you touch my tralala")
 
 def test_additional_Id_book_id_wrongType():
-    with pytest.raise(ValueError):
+    with pytest.raises(ValueError):
         ids = Id(book_id = "akaka kaka pom pom shaka shaka")
 
 def test_additional_Id_order_id_wrongType():
-    with pytest.raise(ValueError):
+    with pytest.raises(ValueError):
         ids = Id(order_id = "shakalakapapaka")
 
 def test_additional_Id_order_id_negativeId():
-    with pytest.raise(ValueError):
+    with pytest.raises(ValueError):
         ids = Id(order_id = -1)
