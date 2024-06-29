@@ -68,6 +68,7 @@ class Book:
           if (type(gen) != str):
             return_code[6] = 1
             flag = 1
+          else: continue
         if (flag == 0):
           return_code[6] = 0
       else: return_code[6] = 0
@@ -86,5 +87,6 @@ class Book:
       print("price = ", self.price)
       print("publisher = ", self.publisher)
       print("genre = ", self.genre)
+    else: pass
 
     print("\n")
